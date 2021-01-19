@@ -176,7 +176,7 @@ failexitcode
 
 run_postinst() {
   dfmgr_run_post
-  [ -f "$SHARE/castero/castero.db" ] || castero --import "$DOWNLOADED_TO/podcasts.opml"
+  [ -f "$SHARE/castero/castero.db" ] || cmd_exists castero && castero --import "$DOWNLOADED_TO/podcasts.opml"
 }
 
 execute \
