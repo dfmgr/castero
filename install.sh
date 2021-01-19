@@ -155,6 +155,7 @@ failexitcode
 
 # Plugins
 
+if __am_i_online; then
 if [ "$PLUGNAMES" != "" ]; then
   if [ -d "$PLUGDIR"/PLUREP/.git ]; then
     execute \
@@ -166,6 +167,7 @@ if [ "$PLUGNAMES" != "" ]; then
       "Installing plugin PLUGREP"
   fi
 fi
+fi
 
 # exit on fail
 failexitcode
@@ -176,7 +178,9 @@ failexitcode
 
 run_postinst() {
   dfmgr_run_post
-  [ -f "$SHARE/castero/castero.db" ] || cmd_exists castero && castero --import "$DOWNLOADED_TO/podcasts.opml"
+  if [ ! -f "$SHARE/castero/castero.db" ] && cmd_exists castero; then
+    castero --import "$DOWNLOADED_TO/podcasts.opml"
+  fi
 }
 
 execute \
