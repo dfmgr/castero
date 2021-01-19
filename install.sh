@@ -24,12 +24,12 @@ SCRIPTSFUNCTFILE="${SCRIPTSAPPFUNCTFILE:-app-installer.bash}"
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 if [ -f "$SCRIPTSFUNCTDIR/functions/$SCRIPTSFUNCTFILE" ]; then
-    . "$SCRIPTSFUNCTDIR/functions/$SCRIPTSFUNCTFILE"
+  . "$SCRIPTSFUNCTDIR/functions/$SCRIPTSFUNCTFILE"
 elif [ -f "$HOME/.local/share/CasjaysDev/functions/$SCRIPTSFUNCTFILE" ]; then
-    . "$HOME/.local/share/CasjaysDev/functions/$SCRIPTSFUNCTFILE"
+  . "$HOME/.local/share/CasjaysDev/functions/$SCRIPTSFUNCTFILE"
 else
-    curl -LSs "$SCRIPTSFUNCTURL/$SCRIPTSFUNCTFILE" -o "/tmp/$SCRIPTSFUNCTFILE" || exit 1
-    . "/tmp/$SCRIPTSFUNCTFILE"
+  curl -LSs "$SCRIPTSFUNCTURL/$SCRIPTSFUNCTFILE" -o "/tmp/$SCRIPTSFUNCTFILE" || exit 1
+  . "/tmp/$SCRIPTSFUNCTFILE"
 fi
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -138,14 +138,14 @@ ensure_perms
 # Main progam
 
 if [ -d "$DOWNLOADED_TO/.git" ]; then
-    execute \
-        "git_update $APPDIR" \
-        "Updating $APPNAME configurations"
+  execute \
+    "git_update $APPDIR" \
+    "Updating $APPNAME configurations"
 else
-    execute \
-        "backupapp && \
+  execute \
+    "backupapp && \
         git_clone -q $REPO/$APPNAME $APPDIR" \
-        "Installing $APPNAME configurations"
+    "Installing $APPNAME configurations"
 fi
 
 # exit on fail
@@ -156,15 +156,15 @@ failexitcode
 # Plugins
 
 if [ "$PLUGNAMES" != "" ]; then
-    if [ -d "$PLUGDIR"/PLUREP/.git ]; then
-        execute \
-            "git_update $PLUGDIR/PLUGREP" \
-            "Updating plugin PLUGNAME"
-    else
-        execute \
-            "git_clone PLUGINREPO $PLUGDIR/PLUGREP" \
-            "Installing plugin PLUGREP"
-    fi
+  if [ -d "$PLUGDIR"/PLUREP/.git ]; then
+    execute \
+      "git_update $PLUGDIR/PLUGREP" \
+      "Updating plugin PLUGNAME"
+  else
+    execute \
+      "git_clone PLUGINREPO $PLUGDIR/PLUGREP" \
+      "Installing plugin PLUGREP"
+  fi
 fi
 
 # exit on fail
@@ -175,13 +175,13 @@ failexitcode
 # run post install scripts
 
 run_postinst() {
-    dfmgr_run_post
-    [ -f "$SHARE/castero/castero.db" ] || castero --import $APPDIR/podcasts.opml
+  dfmgr_run_post
+  [ -f "$SHARE/castero/castero.db" ] || castero --import "$DOWNLOADED_TO/podcasts.opml"
 }
 
 execute \
-    "run_postinst" \
-    "Running post install scripts"
+  "run_postinst" \
+  "Running post install scripts"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
