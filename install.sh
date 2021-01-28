@@ -183,7 +183,7 @@ fi
 run_postinst() {
   dfmgr_run_post
   if [ ! -f "$SHARE/castero/castero.db" ] && cmd_exists castero; then
-    castero --import "$INSTDIR/podcasts.opml"
+    __am_i_online && castero --import "$INSTDIR/podcasts.opml"
   fi
 }
 
