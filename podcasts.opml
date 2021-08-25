@@ -18,12 +18,10 @@
       <outline type="rss" text="Choose Linux" xmlUrl="https://feeds.fireside.fm/chooselinux/rss" />
       <outline type="rss" text="TWiT Specials" xmlUrl="http://feeds.twit.tv/specials_video_small.xml" />
       <outline type="rss" text="This Week in Google" xmlUrl="http://feeds.twit.tv/twig_video_small.xml" />
-      <outline type="rss" text="Motherhacker" xmlUrl="https://feeds.megaphone.fm/motherhacker" />
       <outline type="rss" text="Risky Business" xmlUrl="http://risky.biz/feeds/risky-business/" />
       <outline type="rss" text="Reply All" xmlUrl="https://feeds.megaphone.fm/replyall" />
       <outline type="rss" text="What Next | Daily News and Analysis" xmlUrl="https://feeds.megaphone.fm/whatnext" />
       <outline type="rss" text="Linux Action News" xmlUrl="https://feeds.fireside.fm/linuxactionnews/rss" />
-      <outline type="rss" text="Forensic Files" xmlUrl="http://feeds.adknit.com/app-search/hln/forensic-files/all/720/200/" />
       <outline type="rss" text="Defensive Security Podcast - Malware, Hacking, Cyber Security &amp; Infosec" xmlUrl="https://defensivesecurity.org/feed/podcast/" />
       <outline type="rss" text="Security Now" xmlUrl="http://feeds.twit.tv/sn_video_hd" />
       <outline type="rss" text="Open Source Security Podcast" xmlUrl="http://opensourcesecuritypodcast.libsyn.com/rss" />
@@ -35,10 +33,8 @@
       <outline type="rss" text="HACKED: Into the minds of Cybersecurity leaders" xmlUrl="http://feeds.soundcloud.com/users/soundcloud:users:330256333/sounds.rss" />
       <outline type="rss" text="Psychiatry: Psychotherapy Podcast" xmlUrl="https://psychiatrypodcast.libsyn.com/rss" />
       <outline type="rss" text="LINUX Unplugged" xmlUrl="https://feeds.fireside.fm/linuxunplugged/rss" />
-      <outline type="rss" text="Decrypted" xmlUrl="http://feeds.bloomberg.fm/BLM3923153289" />
       <outline type="rss" text="BSD Now" xmlUrl="https://feeds.fireside.fm/bsdnow/rss" />
       <outline type="rss" text="Reset" xmlUrl="https://rss.art19.com/reset" />
-      <outline type="rss" text="ColdFusion" xmlUrl="http://feeds.megaphone.fm/coldfusion" />
       <outline type="rss" text="Windows Weekly" xmlUrl="http://feeds.twit.tv/ww_video_small.xml" />
       <outline type="rss" text="Off The Hook" xmlUrl="https://www.2600.com/oth-broadband.xml" />
       <outline type="rss" text="Serial" xmlUrl="http://feeds.serialpodcast.org/serialpodcast" />
