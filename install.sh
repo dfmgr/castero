@@ -126,7 +126,7 @@ if am_i_online; then
     execute "git_clone $REPO $INSTDIR" "Installing $APPNAME configurations"
   fi
   # exit on fail
-  failexitcode $? "Git has failed"
+  failexitcode $? "Failed to download $REPO/$APPNAME to $INSTDIR"
 fi
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Plugins
